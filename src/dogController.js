@@ -3,6 +3,11 @@ class DogController {
   static renderDogList(){
     Adapter.getDogList().then(dogs => {
       const doggyTable = document.getElementById('dogtable')
+      const mainDiv = document.getElementById('main-flex-div')
+      const dogImg = document.createElement('img')
+      dogImg.src = './assets/dog-show.jpg'
+      dogImg.height = 400
+      mainDiv.append(dogImg)
       dogs.forEach(dog => {
         // Set Row Data
         const dogRow = DogController.renderRow(dog)
